@@ -45,10 +45,10 @@ const Main = () => {
     <span className='text-primary font-weight-bold'>12</span> {/* Uyarı sayısı, yazı kalınlığı ve renk atandı */}
         </div>
 
+      </div> 
     <div className="charts"> {/* Grafiklerin bulunduğu alan */}
       <BarCharts/>  {/* Çubuk Grafiğini aktarıyoruz*/}
       <AreaCharts/>  {/* Alan Grafiği*/}
-      </div> 
       </div>
     </div>
   )

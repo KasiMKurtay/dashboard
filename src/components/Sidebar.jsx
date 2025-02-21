@@ -10,7 +10,7 @@ const Sidebar = () => {
   const {sidebarClose} = useSelector(state => state.genelState)
 
   return (
-    <aside className='' id='sidebar'>
+    <aside className={sidebarClose ? "sidebar-responsive" : ""} id='sidebar'>
       <div className="sidebar-title">{/* Sidebar başlık */}
         <div className="sidebar-brand">
           <MdInventory2 />Envanter {/* Sidebar başlık ikonu ve metni */}
@@ -18,7 +18,7 @@ const Sidebar = () => {
         <IoClose 
         onClick={()=> dispatch(setSideBar(!sidebarClose))}
         className='cursor-pointer'
-        style={{marginLeft:"15px"}}
+        style={{marginLeft:"15px", display:`${sidebarClose ? "initial" :"none"}`}}
         size="28px"/>
       </div>
     <ul className="sidebar-list"> {/*Sidebar Menü listesi */}
