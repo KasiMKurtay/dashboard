@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    background-color: #fff;
+    color: #666;
+}
+html{
+    scroll-behavior: smooth; /*Scroll davranışı düzenleme */
+}
+::-webkit-scrollbar{
+    width: 5px; /*Genişlik*/
+    height: 6px; /*Yükseklik*/
+}
+.grid-container{
+    display: grid; /*Grid yapısı olutşurma */
+    grid-template-columns: 260px 1fr 1fr 1fr; /*Sütun genişliği ayarlama*/
+    grid-template-rows: 0.2fr 3fr; /*Satırların yüksekliğini belirleme*/
+    grid-template-areas: 
+    "sidebar header header header"
+    "sidebar main main main";/*Grid alanları belirleme*/
+    height: 100vh; /*Tam ekran yüksekliği belirleme*/
+}
+.cursor-pointer{
+    cursor: pointer; /*Mous imleci ayarlama*/
+}
+/*Metin rengi belirleme*/
+
+.text-primary{
+    color: #666; 
+}
+.text-blue{
+    color: #246dec; /* Metin rengini belirliyoruz */
+  }
+  .text-red{
+    color: #cc3c43; /* Metin rengini belirliyoruz */
+  }
+  .text-green{
+    color: #367952; /* Metin rengini belirliyoruz */
+  }
+  .text-orange{
+    color: #f5b74f; /* Metin rengini belirliyoruz */
+  }
+  .font-weight-bold{
+    font-weight: 600; /* Font ağırlığını belirliyoruz */
+  }
+
+/* Sidebar */
+#sidebar{
+    grid-area: sidebar; /* Sidebar'ın alanını belirledik*/
+    height: 100%; /* Tam ekran yüksekliği belirledik */
+    background-color: #21232d; /* Arka plan rengi belriledik*/
+    color: #9799ab; /* Metin Rengi belirlendi */
+    overflow-y: auto; /*Taşınabilir yatay kaydırma çubuğu belirleme */
+    transition: all 0.5s; /* Tüm özellikler için geçiş belirledik*/
+    -webkit-transition : all 0.5s; /* Webkit tarayıcaları için geçiş*/
+}
+.sidebar-title{
+    display: flex; /* Flexbox yapısını belirliyoruz*/
+    justify-content: space-around;/* İçeriği eşit aralıklarla hizaladık*/
+    align-items: center;/* Dikey hizala*/
+    padding: 20px 20px 20px 20px;/* Padding*/
+    margin-bottom: 30px;/* Alt başlıklar arasındaki boşlukları belirle*/
+}
+.sidebar-brand{
+    margin-top: 15px; /* Üst başlıklar arasındaki boşluk belirlendi */
+    font-size: 20px;/* Font boyutu belirlendi*/
+    font-weight: 700;/* Font kalınlığı belirliyoruz*/
+}
+.sidebar-list{
+    padding: 0;
+    margin-top: 15px; /* Üst başlıklar arasındaki boşluk*/
+    list-style-type: none; /* Ul'den gelen sol taraftaki noktayı kaldırıyoruz*/
+}
+.sidebar-list-item{
+    padding: 20px 20px 20px 20px;
+}
+.sidebar-list-item a{
+    text-decoration: none; /*Link stilini sıfırlyırouz */
+    color: #9799ab; /*Metin rengini belirliyoruz */
+}
+.sidebar-list-item:hover{
+    background-color: rgba(255, 255, 255, 0.2); /* Mouse üstüne geldiğinde arka plan rengi değiştiriyoruz*/
+    cursor: pointer; /* Mouse üstüne geldiğinde pointer olmasını sağlıyoruz*/
+}
+.sidebar-responsive{
+    display: inline !important; /* Display'i inline yapıyoruz ve öncelik atıyoruz*/
+    position: absolute; /* Position absolute  yapıyoruz */
+    z-index: 12 !important; /* Önde durmasını sağlamak için z-index veriyoruz ve öncelik atıyoruz*/
+}
+ /* Main Section */
+
+ .main-container{
+    grid-area: main; /* main alanını belirledik */
+    overflow-y: auto; /* taşınablilir yatay kaydırma çubuğu ekledik*/
+    padding: 20px 20px;
+ }
+ .main-title{
+    display: flex; /*Flexbox yapısını belirledik */
+    justify-content: space-between; /* içeriği eşit aralıklarla hizaladık*/
+ }
+ .main-title p{
+    font-size: 20px;
+ }
+ .main-cards{
+    display: grid; /* grid yapısını belriliyoruz*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Sütun genişliklerini belirledik*/
+    gap: 20px; /* Aralıkları belirliyoruz*/
+    margin: 20px 0; /* Margin'i belirliyoruz*/
+ }
+ .card{
+    display: flex; /* Flexbox belirliyoruz(yan yana getiriyoruz)*/
+    flex-direction: column; /*Flex yönünü belirliyoruz (dikeyde sıralama) */
+    justify-content: space-around; /* İçeriği eşit aralıklarla hizalıyoruz */
+    padding: 25px; /* paddingi ayarladık*/
+    border-color: #fff; /* kenarları beyzz yaptık*/
+    border: 1px solid #d2d2d3; /* Kenarların rengini belirledik */
+    border-radius: 5px; /* Kenarlara yumuşaklık atadık*/
+    box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);/* Kutu gölgesi eklendi*/
+    cursor: pointer;
+ }
+ .card:first-child{
+    border-left: 7px solid #246dec; /* Kenarların rengini belirledik */
+ }
+ .card:nth-child(2){
+    border-left: 7px solid #f5b74f; /* Kenarların rengini belirledik */
+ }
+ .card:nth-child(3){
+    border-left: 7px solid #367952; /* Kenarların rengini belirledik */
+ }
+ .card:nth-child(4){
+    border-left: 7px solid #cc3c43;
+ }
+ .card-span{
+    font-size: 20px; /* Font boyutu*/
+    font-weight: 600; /* font kalınlığı */
+ }
+ .card-inner{
+    font-size: 18px; /* font boyutu*/
+ }
+ .card-inner p {
+    font-size: 18px; 
+ }
+ .charts{
+    display: grid; /* grid yapısını atıyoruz*/
+    grid-template-columns: 1fr 1fr; /* Sütun genişliği */
+    gap: 20px;
+ }
+ .charts-card{
+    background-color: #fff;
+    margin-bottom: 20px; 
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid; /* Webkit tarayıcıları için içeriği kesiyoruz*/
+    box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+ }
+ .chart-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ /* Header Section */
+ .header{
+    grid-area: header; /*Header alanını belirledik */
+    height: 70px; /*Yüksekliği belirliyoruz*/
+    border-color: #fff;/*Kenarlık rengi*/
+    display: flex;/*Flexbox yapısı*/
+    justify-content: space-between;/*İçeriği eşit aralıklarla hizlama*/
+    align-items: center;/*Dikey'de hizalama*/
+    padding: 0 30px 0 30px; 
+    box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2);
+ }
+ .menu-icon{
+    display: none;
+ }
+ .header-right{
+    display: flex;
+    gap: 10px;
+ }
