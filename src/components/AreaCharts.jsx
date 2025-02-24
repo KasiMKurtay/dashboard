@@ -7,12 +7,12 @@ const AreaCharts = () => {
     series: [
       //Grafik için yapılandırma nesnesi tanımladık
       {
-        name: "Alım Siparişlleri", //İlk serimizin adı.
-        data: [31, 45, 21, 43, 1, 445, 6, 213], //İlk serinin verileri.
+        name: "Alım Siparişleri", //İlk serimizin adı.
+        data: [31, 45, 21, 43, 1, 445, 6, 213, 34, 55, 67, 88], //İlk serinin verileri.
       },
       {
         name:"Satış Siparişleri", //İkinci serimizin adı
-        data:[11,32,35,63,2,66,99,1,2,45,33] //İkinci serinin verileri
+        data:[11,32,35,63,2,66,99,35,23,45,33,77] //İkinci serinin verileri
       },
     ],
     chart:{
@@ -29,7 +29,7 @@ const AreaCharts = () => {
     stroke:{
       curve:"smooth", //Eğriliği düzleştiriyoruz
     },
-    labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz"],//X ekseni tarihlerini ekledik
+    labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],//X ekseni tarihlerini ekledik
     markers:{
       size:0, //Grafik üzerindeki veri noktalarının boyutunu sıfır yapıyoruz
     },
@@ -53,7 +53,7 @@ const AreaCharts = () => {
   };
   return(
     <div className="charts-card">
-      <p className="chart-title">Alım ve Satıl Siparişleri</p>
+      <p className="chart-title">Alım ve Satış Siparişleri</p>
       <Chart
       options={areaChartsOptions}
       series={areaChartsOptions.series}
